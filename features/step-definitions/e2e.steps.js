@@ -12,7 +12,9 @@ Given(/^user is on the index page as "([^"]*)"$/, async (httpswwwlloydsbankcom) 
     allureReporter.addFeature('The Lloydsbank Website');
     await IndexPage.navigateToHomePageUrl(httpswwwlloydsbankcom)
     await expect(browser).toHaveUrl(httpswwwlloydsbankcom)
-    await topNavigationPage.logoImage.isExisting()
+    await (topNavigationPage.logoImage).waitForDisplayed()
+    await (topNavigationPage.logoImage).isEnabled()
+    await topNavigationPage.clickOnCompanyLogo()
 
 });
 When(/^user validates page title as "([^"]*)"$/, async (lloydsbankpersonalbankingpersonalfinancesbankaccounts) => {
